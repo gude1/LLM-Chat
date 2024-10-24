@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { HfInference } from "@huggingface/inference";
+import { Message } from "@/types/llmchat";
 
 type RequestBody = {
-  messages: [];
+  messages: Message[];
 };
 
 const inference = new HfInference(process.env.HUGGINGFACE_API_KEY);

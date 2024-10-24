@@ -6,14 +6,9 @@ import SenderChatMsgItem from "@/components/SenderChatMsgItem";
 import TextEditor, { TextEditorHandle } from "@/components/TextEditor";
 import { useLLmChatStream } from "@/hooks/useLLmChatStream";
 import { copyToClipBoard, generateUniqueId } from "@/lib/utils";
+import { Message } from "@/types/llmchat";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
-
-type Message = {
-  role: "user" | "assistant";
-  id: string;
-  content: string;
-};
 
 export default function Home() {
   const { response, isLoading, sendMessage, cancelStream } = useLLmChatStream();
@@ -70,16 +65,16 @@ export default function Home() {
       const newMessageId = generateUniqueId();
       setCurrentStreamId(newMessageId);
 
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        {
-          role: "user",
-          content: html,
-          id: generateUniqueId(),
-        },
-      ]);
+      const newMessages = [...messages];
+      newMessages.push({
+        role: "user",
+        content: html,
+        id: generateUniqueId(),
+      });
 
-      await sendMessage(html);
+      setMessages(newMessages);
+
+      await sendMessage(newMessages);
     } catch (err) {
       console.error("Chat submission error:", err);
       alert("Failed to send message. Please try again.");

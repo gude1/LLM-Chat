@@ -1,4 +1,5 @@
 import { useState, useCallback, useRef } from "react";
+import { Message } from "@/types/llmchat";
 
 type StreamResponse = {
   response: string;
@@ -13,7 +14,7 @@ export const useLLmChatStream = () => {
   const abortControllerRef = useRef<AbortController | null>(null);
 
   const sendMessage = useCallback(
-    async (message: string): Promise<StreamResponse> => {
+    async (messages: Message[]): Promise<StreamResponse> => {
       setIsLoading(true);
       setError(null);
       setResponse("");
@@ -26,7 +27,7 @@ export const useLLmChatStream = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ message }),
+          body: JSON.stringify({ messages }),
           signal: abortControllerRef.current.signal,
         });
 
