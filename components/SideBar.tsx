@@ -10,8 +10,9 @@ import {
   Book,
   Share,
   Trash,
+  X,
+  MessageSquare,
 } from "lucide-react";
-import Image from "next/image";
 import {
   Accordion,
   AccordionContent,
@@ -32,13 +33,21 @@ const Sidebar = () => {
         } md:translate-x-0`}
       >
         {/* Header with Logo */}
-        <div className="h-14 flex justify-center flex-col px-5">
-          <Image
-            width={79.68}
-            height={48}
-            src={"/images/unic.png"}
-            alt="University logo"
-          />
+        <div className="h-14 flex justify-between items-center px-5">
+          <div className="flex items-center">
+            <MessageSquare className="mr-2" />
+            <span className="font-inter font-semibold text-base leading-[1.21rem]">
+              LLM Chat
+            </span>
+          </div>
+
+          <Button
+            variant="outline"
+            className="md:hidden h-auto w-auto bg-gray-800 text-white p-2"
+            onClick={() => setIsOpen(false)}
+          >
+            <X size={20} />
+          </Button>
         </div>
 
         {/* Sidebar body */}
@@ -148,8 +157,8 @@ const Sidebar = () => {
       {/* Mobile Toggle Button */}
       <Button
         variant="outline"
-        className="fixed top-4 left-4 z-50 md:hidden bg-gray-800 text-white p-2"
-        onClick={() => setIsOpen(!isOpen)}
+        className="fixed top-4 left-4 md:hidden bg-gray-800 text-white p-2"
+        onClick={() => setIsOpen(true)}
       >
         <Menu size={24} />
       </Button>

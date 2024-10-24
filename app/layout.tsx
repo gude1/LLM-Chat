@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "LLM Wrapper",
+  title: "LLM Chat",
   description:
-    "An LLM-based chat interface with real-time interaction, web scraping, and rich text editing.",
+    "An LLM-based chat interface with real-time interaction, web scraping, and rich text editing. Built with love by Gideon Owolabi",
 };
 
 export default function RootLayout({

@@ -19,7 +19,9 @@ export default function Home() {
 
   // Scroll to bottom whenever messages change
   useEffect(() => {
-    scrollToBottom();
+    requestAnimationFrame(() => {
+      scrollToBottom();
+    });
   }, [messages]);
 
   // Handle stream response changes
@@ -73,7 +75,6 @@ export default function Home() {
       });
 
       setMessages(newMessages);
-
       await sendMessage(newMessages);
     } catch (err) {
       console.error("Chat submission error:", err);
@@ -117,6 +118,7 @@ export default function Home() {
       <footer className="pb-4 fixed z-40 bg-background px-5 bottom-0 left-0 right-0 md:ml-64 flex justify-center">
         <TextEditor
           onSubmit={handleSubmit}
+          limit={2000}
           ref={texteditorRef}
           loading={isLoading}
           onCancel={cancelStream}

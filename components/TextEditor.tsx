@@ -419,7 +419,6 @@ const TextEditor = forwardRef<TextEditorHandle, TextEditorProps>(
               </Button>
               <Button
                 variant={"ghost"}
-                onClick={() => setOpenWebScrapperDialog(true)}
                 className="p-0 hover:bg-transparent hover:text-white mr-7 w-auto h-auto rounded-none flex items-center justify-center"
               >
                 <Quote size={16} className="mr-2" />

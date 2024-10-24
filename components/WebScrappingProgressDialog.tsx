@@ -43,7 +43,7 @@ const WebScrappingProgressDialog: React.FC<WebScrappingProgressDialogProps> = ({
             </span>
           </div>
 
-          <Progress value={40} className="h-[0.1875rem] bg-[#3C3C3C]" />
+          <Progress value={40} className="h-[0.1875rem] mt-4 bg-[#3C3C3C]" />
         </div>
       );
     });

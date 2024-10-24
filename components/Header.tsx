@@ -60,7 +60,7 @@ const Header = () => {
           variant={"ghost"}
           className="rounded-none font-inter font-semibold text-base leading-[1.21rem]"
         >
-          Front-End Task
+          Chat
           <SquarePen strokeWidth={3.5} width={14} className="ml-3" />
         </Button>
 
