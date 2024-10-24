@@ -1,6 +1,6 @@
-# LLM Wrapper
+# LLM Chat
 
-LLM Wrapper is an LLM-based chat interface that supports real-time interaction, web scraping, and rich text editing. It allows users to communicate with a Large Language Model (LLM), edit and resend messages, and perform web scraping directly within a Tiptap-based text editor.
+LLM Chat is an LLM-based chat interface that supports real-time interaction, web scraping, and rich text editing. It allows users to communicate with a Large Language Model (LLM), edit and resend messages, and perform web scraping directly within a Tiptap-based text editor.
 
 ## Table of Contents
 
@@ -41,4 +41,5 @@ cp .env.example .env
 ## Tech Stack
 
 -**Client**: Next.js
+
 # LLM-Chat
