@@ -2,6 +2,9 @@
 
 LLM Chat is an LLM-based chat interface that supports real-time interaction, web scraping, and rich text editing. It allows users to communicate with a Large Language Model (LLM), edit and resend messages, and perform web scraping directly within a Tiptap-based text editor.
 
+https://github.com/user-attachments/assets/faa36727-5324-41c6-924e-f030e96306c1
+
+
 ## Table of Contents
 
 - [Features](#features)
