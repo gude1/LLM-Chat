@@ -23,11 +23,11 @@ import {
   Italic,
   List,
   ListOrdered,
-  StopCircle,
   Heading1,
   Heading2,
   Code,
   Strikethrough,
+  Square,
 } from "lucide-react";
 import CircularProgress from "@/components/CircularProgress";
 import CommandDialog from "@/components/CommandDialog";
@@ -363,7 +363,9 @@ const TextEditor = forwardRef<TextEditorHandle, TextEditorProps>(
                   onClick={loading ? onCancel : handleSubmit} // Attach handleSubmit to send button
                 >
                   {loading ? (
-                    <StopCircle size={30} />
+                    <div className="p-2 rounded-full cursor-pointer bg-white">
+                      <Square size={18} fill="black" stroke="black" />
+                    </div>
                   ) : (
                     <PaperPlane size={25} />
                   )}
