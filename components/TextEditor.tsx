@@ -222,7 +222,7 @@ const TextEditor = forwardRef<TextEditorHandle, TextEditorProps>(
       if (editor) {
         const content = editor.getText();
 
-        if (!editor) {
+        if (!content || content.length < 1) {
           return;
         }
         editor.commands.clearContent();
