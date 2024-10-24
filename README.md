@@ -37,6 +37,7 @@ cp .env.example .env
 ```
 
 3. Obtain the necessary API keys and select an LLM model of your choice from [Hugging Face.](https://huggingface.co/microsoft/Phi-3.5-mini-instruct)
+   The model used is microsoft/Phi-3.5-mini-instruct
 
 ## Tech Stack
 
